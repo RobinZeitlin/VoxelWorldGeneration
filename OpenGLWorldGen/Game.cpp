@@ -9,12 +9,12 @@
 #include "camera/Camera.h"
 
 Game::Game(GLFWwindow* window, Renderer* renderer) 
-	: window(window), renderer(renderer) 
-{
+	: window(window), renderer(renderer) {
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
-void Game::update()
-{
+Game::~Game() {
+}
+void Game::update() {
 	float currentFrame = glfwGetTime();
 	deltaTime = currentFrame - lastFrame;
 	lastFrame = currentFrame;
@@ -28,4 +28,5 @@ void Game::process_input(GLFWwindow* window) {
 	}
 
 	renderer->get_camera()->inputs(window, deltaTime);
+	renderer->input();
 }

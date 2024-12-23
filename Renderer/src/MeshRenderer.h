@@ -5,14 +5,17 @@
 #include "buffers/VBO.h"
 
 class Shader;
+class Renderer;
 
 class MeshRenderer {
 public:
-	MeshRenderer(Shader* shader);
+	MeshRenderer(Shader* shader, GLfloat* vertices, size_t verticesSize, GLuint* indices, size_t indicesSize);
 	~MeshRenderer();
 
 	void draw();
 	void destroy();
+
+	Renderer* renderer;
 
 protected:
 	EBO* ebo = nullptr;
@@ -20,4 +23,10 @@ protected:
 	VBO* vbo = nullptr;
 
 	Shader* shader;
+
+	GLfloat* vertices;
+	GLuint* indices;
+
+	size_t verticesSize;
+	size_t indicesSize;
 };

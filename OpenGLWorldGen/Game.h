@@ -7,6 +7,7 @@ class Transform;
 class Game {
 public:
 	Game(GLFWwindow* window, Renderer* renderer);
+	~Game();
 
 	void update();
 	

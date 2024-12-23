@@ -15,6 +15,7 @@
 #include "buffers/VBO.h"
 
 #include "MeshRenderer.h"
+#include "DrawType.h"
 
 class Shader;
 class Camera;
@@ -27,9 +28,12 @@ public:
 
     void init_renderer();
     void terminate();
+    void input();
 
     GLFWwindow* get_window() { return window; }
     Camera* get_camera() { return camera; }
+
+    DrawType currentDrawMode = DrawType::Fill;
 
 private:
     MeshRenderer* mesh;
@@ -39,9 +43,6 @@ private:
     const int width, height;
 
     Shader* defaultShader;
-    EBO* EBO1;
-    VAO* VAO1;
-    VBO* VBO1;
 
     Camera* camera;
 };

@@ -35,6 +35,7 @@
     <ClInclude Include="src\buffers\VAO.h" />
     <ClInclude Include="src\buffers\VBO.h" />
     <ClInclude Include="src\camera\Camera.h" />
+    <ClInclude Include="src\DrawType.h" />
     <ClInclude Include="src\MeshRenderer.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\shaders\Shader.h" />
