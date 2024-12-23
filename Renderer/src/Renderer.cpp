@@ -31,11 +31,10 @@ void Renderer::init_renderer() {
         return;
     }
 
-	defaultShader = new Shader("vertex.shader", "fragment.shader");
-    mesh = new MeshRenderer(defaultShader);
-
     glEnable(GL_DEPTH_TEST);
 
+    defaultShader = new Shader("vertex.shader", "fragment.shader");
+    mesh = new MeshRenderer(defaultShader);
     camera = new Camera(500, 500, glm::vec3(1.0f, 0.0f, 2.0f));
 }
 

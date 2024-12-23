@@ -4,12 +4,12 @@
 
 GLfloat vertices[] = {
 	// Positions               // Colors (Green)
-	-0.5f, -0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Bottom-left-front
-	 0.5f, -0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Bottom-right-front
+	-0.5f, -0.5f, -0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-left-front
+	 0.5f, -0.5f, -0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-right-front
 	 0.5f,  0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Top-right-front
 	-0.5f,  0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Top-left-front
-	-0.5f, -0.5f,  0.5f,       0.0f, 1.0f, 0.0f,  // Bottom-left-back
-	 0.5f, -0.5f,  0.5f,       0.0f, 1.0f, 0.0f,  // Bottom-right-back
+	-0.5f, -0.5f,  0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-left-back
+	 0.5f, -0.5f,  0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-right-back
 	 0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f,  // Top-right-back
 	-0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f   // Top-left-back
 };

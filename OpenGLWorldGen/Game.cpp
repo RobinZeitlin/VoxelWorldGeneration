@@ -11,7 +11,7 @@
 Game::Game(GLFWwindow* window, Renderer* renderer) 
 	: window(window), renderer(renderer) 
 {
-
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 }
 void Game::update()
 {
@@ -19,13 +19,13 @@ void Game::update()
 	deltaTime = currentFrame - lastFrame;
 	lastFrame = currentFrame;
 
-	processInput(window);
+	process_input(window);
 }
 
-void Game::processInput(GLFWwindow* window) {
-	if (glfwGetKey(window, GLFW_KEY_F) == GLFW_PRESS) {
+void Game::process_input(GLFWwindow* window) {
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
 		glfwSetWindowShouldClose(window, true);
 	}
 
-	renderer->get_camera()->Inputs(window, deltaTime);
+	renderer->get_camera()->inputs(window, deltaTime);
 }

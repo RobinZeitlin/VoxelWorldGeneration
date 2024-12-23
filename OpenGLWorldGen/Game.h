@@ -10,7 +10,7 @@ public:
 
 	void update();
 	
-	void processInput(GLFWwindow* window);
+	void process_input(GLFWwindow* window);
 
 private:
 	GLFWwindow* window = nullptr;
