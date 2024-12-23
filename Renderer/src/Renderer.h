@@ -35,14 +35,15 @@ public:
 
     DrawType currentDrawMode = DrawType::Fill;
 
-private:
+    Shader* defaultShader;
+
     MeshRenderer* mesh;
+
+private:
 
     GLFWwindow* window = nullptr;
 
     const int width, height;
-
-    Shader* defaultShader;
 
     Camera* camera;
 };

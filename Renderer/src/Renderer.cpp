@@ -4,15 +4,15 @@
 #include "shaders/Shader.h"
 
 GLfloat vertices[] = {
-    // Positions               // Colors (Green)
-    -0.5f, -0.5f, -0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-left-front
-     0.5f, -0.5f, -0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-right-front
-     0.5f,  0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Top-right-front
-    -0.5f,  0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Top-left-front
-    -0.5f, -0.5f,  0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-left-back
-     0.5f, -0.5f,  0.5f,       1.0f, 1.0f, 0.0f,  // Bottom-right-back
-     0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f,  // Top-right-back
-    -0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f   // Top-left-back
+    // Positions               // Colors (Green and Brown)
+    -0.5f, -0.5f, -0.5f,       0.6f, 0.3f, 0.0f,  // Bottom-left-front (Brown)
+     0.5f, -0.5f, -0.5f,       0.6f, 0.3f, 0.0f,  // Bottom-right-front (Brown)
+     0.5f,  0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Top-right-front (Green)
+    -0.5f,  0.5f, -0.5f,       0.0f, 1.0f, 0.0f,  // Top-left-front (Green)
+    -0.5f, -0.5f,  0.5f,       0.6f, 0.3f, 0.0f,  // Bottom-left-back (Brown)
+     0.5f, -0.5f,  0.5f,       0.6f, 0.3f, 0.0f,  // Bottom-right-back (Brown)
+     0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f,  // Top-right-back (Green)
+    -0.5f,  0.5f,  0.5f,       0.0f, 1.0f, 0.0f   // Top-left-back (Green)
 };
 
 GLuint indices[] = {
@@ -56,8 +56,7 @@ void Renderer::init_renderer() {
     glEnable(GL_DEPTH_TEST);
 
     defaultShader = new Shader("vertex.shader", "fragment.shader");
-    mesh = new MeshRenderer(defaultShader, vertices, sizeof(vertices), indices, sizeof(indices));
-    mesh->renderer = this;
+    
     camera = new Camera(500, 500, glm::vec3(1.0f, 0.0f, 2.0f));
 }
 
@@ -67,7 +66,8 @@ void Renderer::render() {
 
     camera->Matrix(45.0f, 0.1f, 100.0f, *defaultShader, "camMatrix");
 
-    mesh->draw();
+    if(mesh != nullptr)
+        mesh->draw();
 
     glfwSwapBuffers(window);
 }
@@ -86,9 +86,12 @@ void Renderer::input() {
 
 void Renderer::terminate() {
 	defaultShader->Delete();
+
     delete defaultShader;
-    delete mesh;
     delete camera;
+
+    if (mesh != nullptr)
+        delete mesh;
 
     glfwTerminate();
 }
