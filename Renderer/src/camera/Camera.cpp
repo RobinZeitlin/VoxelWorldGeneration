@@ -22,5 +22,5 @@ void Camera::Matrix(float FOVdeg, float nearPlane, float farPlane, Shader& shade
 		glm::value_ptr(projection * view));
 }
 
-void Camera::Inputs(GLFWwindow* window) {
+void Camera::Inputs(GLFWwindow* window, float dt) {
 }

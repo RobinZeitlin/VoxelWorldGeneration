@@ -25,6 +25,7 @@
     <ClCompile Include="src\buffers\VAO.cpp" />
     <ClCompile Include="src\buffers\VBO.cpp" />
     <ClCompile Include="src\camera\Camera.cpp" />
+    <ClCompile Include="src\MeshRenderer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\shaders\Shader.cpp" />
   </ItemGroup>
@@ -34,6 +35,7 @@
     <ClInclude Include="src\buffers\VAO.h" />
     <ClInclude Include="src\buffers\VBO.h" />
     <ClInclude Include="src\camera\Camera.h" />
+    <ClInclude Include="src\MeshRenderer.h" />
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\shaders\Shader.h" />
   </ItemGroup>
@@ -107,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RENDERER_EXPORT;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);RENDERER_EXPORT;RENDERER_EXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\Renderer\dependencies\glad\include;C:\Projects\Renderer\dependencies\glfw\include;C:\Projects\Renderer\dependencies\glm;C:\Projects\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glad\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glfw\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glm;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -142,7 +144,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RENDERER_EXPORT;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);RENDERER_EXPORT;RENDERER_EXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\Renderer\dependencies\glad\include;C:\Projects\Renderer\dependencies\glfw\include;C:\Projects\Renderer\dependencies\glm;C:\Projects\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glad\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glfw\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glm;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>

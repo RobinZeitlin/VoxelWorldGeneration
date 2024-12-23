@@ -14,6 +14,8 @@
 #include "buffers/VAO.h"
 #include "buffers/VBO.h"
 
+#include "MeshRenderer.h"
+
 class Shader;
 class Camera;
 
@@ -27,8 +29,11 @@ public:
     void terminate();
 
     GLFWwindow* get_window() { return window; }
+    Camera* get_camera() { return camera; }
 
 private:
+    MeshRenderer* mesh;
+
     GLFWwindow* window = nullptr;
 
     const int width, height;
@@ -37,8 +42,6 @@ private:
     EBO* EBO1;
     VAO* VAO1;
     VBO* VBO1;
-
-    GLuint uniID;
 
     Camera* camera;
 };
