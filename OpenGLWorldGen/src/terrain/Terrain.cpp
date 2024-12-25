@@ -36,14 +36,16 @@ void Terrain::generate_terrain(int width, int height) {
 void Terrain::addVoxel(glm::vec3 basePosition, glm::vec3 color) {
     GLfloat halfVoxelSize = voxelSize * 0.5f; // Calculate half voxel size
 
+    // for now il use this to add a slight shade
+    glm::vec3 bottomColor = color - glm::vec3(0.2f);
     // cube vertex points with voxelsize taken into account
     GLfloat cubeVertices[] = {
-        basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, color.r, color.g, color.b,  // Bottom-left-front
-        basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, color.r, color.g, color.b,  // Bottom-right-front
+        basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-left-front
+        basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-right-front
         basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, color.r, color.g, color.b,  // Top-right-front
         basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, color.r, color.g, color.b,  // Top-left-front
-        basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, color.r, color.g, color.b,  // Bottom-left-back
-        basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, color.r, color.g, color.b,  // Bottom-right-back
+        basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-left-back
+        basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-right-back
         basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, color.r, color.g, color.b,  // Top-right-back
         basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, color.r, color.g, color.b   // Top-left-back
     };
@@ -55,8 +57,6 @@ void Terrain::addVoxel(glm::vec3 basePosition, glm::vec3 color) {
         0, 1, 2, 2, 3, 0,
         // Back face
         4, 5, 6, 6, 7, 4,
-        // Bottom face
-        0, 1, 5, 5, 4, 0,
         // Top face
         2, 3, 7, 7, 6, 2,
         // Left face
@@ -67,7 +67,7 @@ void Terrain::addVoxel(glm::vec3 basePosition, glm::vec3 color) {
     
     // add indices for the cube, adding an offset based on the current number of vertices
     GLuint offset = vertices.size() / 6 - 8;
-    for (GLuint i = 0; i < 36; ++i) {
+    for (GLuint i = 0; i < 30; ++i) {
         indices.push_back(cubeIndices[i] + offset);
     }
 }

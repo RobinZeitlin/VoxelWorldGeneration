@@ -40,6 +40,9 @@
     <ClInclude Include="src\Renderer.h" />
     <ClInclude Include="src\shaders\Shader.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="dependencies\glfw\lib\glfw3.lib" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -110,7 +113,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RENDERER_EXPORT;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);RENDERER_EXPORT;RENDERER_EXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glad\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glfw\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glm;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Renderer\dependencies\glad\include;$(ProjectDir)..\Renderer\dependencies\glfw\include;$(ProjectDir)..\Renderer\dependencies\glm;$(ProjectDir)..\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -145,7 +148,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RENDERER_EXPORT;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);RENDERER_EXPORT;RENDERER_EXPORT</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glad\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glfw\include;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glm;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Renderer\dependencies\glad\include;$(ProjectDir)\Renderer\dependencies\glfw\include;$(ProjectDir)\Renderer\dependencies\glm;$(ProjectDir)\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>

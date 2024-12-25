@@ -82,13 +82,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\VoxelWorldGeneration\Renderer\src;C:\Projects\Renderer\dependencies\glad\include;C:\Projects\Renderer\dependencies\glfw\include;C:\Projects\Renderer\dependencies\glm;C:\Projects\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Renderer\src;$(ProjectDir)..\Renderer\dependencies\glad\include;$(ProjectDir)..\Renderer\dependencies\glfw\include;$(ProjectDir)..\Renderer\dependencies\glm;$(ProjectDir)..\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glad\lib;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glfw\lib;C:\Projects\VoxelWorldGeneration\Renderer\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\Renderer\dependencies\glad\lib;$(ProjectDir)..\Renderer\dependencies\glfw\lib;$(ProjectDir)..\Renderer\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;Renderer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -117,13 +117,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\VoxelWorldGeneration\Renderer\src;C:\Projects\Renderer\dependencies\glad\include;C:\Projects\Renderer\dependencies\glfw\include;C:\Projects\Renderer\dependencies\glm;C:\Projects\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Renderer\src;$(ProjectDir)\Renderer\dependencies\glad\include;$(ProjectDir)\Renderer\dependencies\glfw\include;$(ProjectDir)\Renderer\dependencies\glm;$(ProjectDir)\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glad\lib;C:\Projects\VoxelWorldGeneration\Renderer\dependencies\glfw\lib;C:\Projects\VoxelWorldGeneration\Renderer\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\Renderer\dependencies\glad\lib;$(ProjectDir)\Renderer\dependencies\glfw\lib;$(ProjectDir)\Renderer\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;Renderer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
