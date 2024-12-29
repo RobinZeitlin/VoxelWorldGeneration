@@ -14,13 +14,11 @@ void Terrain::generate_terrain(int width, int height) {
 
     srand(time(nullptr));
 
+    vertices.reserve(width * height * 8);
+    indices.reserve(width * height * 6);
+
     for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
-            // get the height of the location
-            float terrainHeight = glm::round(get_height(x, y));
-
-            glm::vec3 basePosition(x * voxelSize, terrainHeight * voxelSize, y * voxelSize);
-
             // generate a random color
             glm::vec3 color(
                 static_cast<float>(rand()) / static_cast<float>(RAND_MAX),
@@ -28,13 +26,21 @@ void Terrain::generate_terrain(int width, int height) {
                 static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
             );
 
-            addVoxel(basePosition, color);
+            addVoxel( { x, y }, color);
         }
     }
 }
 
-void Terrain::addVoxel(glm::vec3 basePosition, glm::vec3 color) {
+void Terrain::addVoxel(glm::vec2 rawPos, glm::vec3 color) {
+
     GLfloat halfVoxelSize = voxelSize * 0.5f; // Calculate half voxel size
+    // get the height of the location
+    float terrainHeight = glm::round(get_height(rawPos.x, rawPos.y));
+
+    glm::vec3 basePosition(
+        rawPos.x * voxelSize, 
+        terrainHeight * voxelSize, 
+        rawPos.y * voxelSize);
 
     // for now il use this to add a slight shade
     glm::vec3 bottomColor = color - glm::vec3(0.2f);
@@ -52,22 +58,25 @@ void Terrain::addVoxel(glm::vec3 basePosition, glm::vec3 color) {
     vertices.insert(vertices.end(), std::begin(cubeVertices), std::end(cubeVertices));
 
     // faces of the cube
-    GLuint cubeIndices[] = {
-        // Front face
-        0, 1, 2, 2, 3, 0,
-        // Back face
-        4, 5, 6, 6, 7, 4,
-        // Top face
+    std::vector<GLuint> cubeIndices = {
+        // top face
         2, 3, 7, 7, 6, 2,
-        // Left face
-        0, 3, 7, 7, 4, 0,
-        // Right face
-        1, 2, 6, 6, 5, 1
     };
-    
+
+    auto lambda = [this, &cubeIndices, &terrainHeight](glm::vec2 neighbourPosition, std::vector<GLuint> additionalIndices) {
+        if (glm::round(get_height(neighbourPosition.x, neighbourPosition.y)) < terrainHeight) {
+            cubeIndices.insert(cubeIndices.end(), additionalIndices.begin(), additionalIndices.end());
+        }
+    };
+
+    lambda({ rawPos.x + 1, rawPos.y }, { 1, 2, 6, 6, 5, 1 }); // right
+    lambda({ rawPos.x - 1, rawPos.y }, { 0, 3, 7, 7, 4, 0 }); // left
+    lambda({ rawPos.x, rawPos.y - 1 }, { 0, 1, 2, 2, 3, 0 }); // forward
+    lambda({ rawPos.x, rawPos.y + 1 }, { 4, 5, 6, 6, 7, 4 }); // back
+
     // add indices for the cube, adding an offset based on the current number of vertices
     GLuint offset = vertices.size() / 6 - 8;
-    for (GLuint i = 0; i < 30; ++i) {
+    for (GLuint i = 0; i < cubeIndices.size(); ++i) {
         indices.push_back(cubeIndices[i] + offset);
     }
 }
