@@ -30,15 +30,14 @@ public:
     void terminate();
     void input();
 
+    std::vector<MeshRenderer*> meshes;
+
     GLFWwindow* get_window() { return window; }
     Camera* get_camera() { return camera; }
 
     DrawType currentDrawMode = DrawType::Fill;
 
     Shader* defaultShader;
-
-    MeshRenderer* mesh;
-
 private:
 
     GLFWwindow* window = nullptr;

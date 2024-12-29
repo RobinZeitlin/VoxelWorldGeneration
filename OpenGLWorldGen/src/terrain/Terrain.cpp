@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include <ctime>
 
+#include <gtc/noise.hpp>
+
 Terrain::Terrain() {
     generate_terrain(width, height);
 }
@@ -81,7 +83,13 @@ void Terrain::addVoxel(glm::vec2 rawPos, glm::vec3 color) {
     }
 }
 
-// creates waves, we use these as a temporary height map
+// perlin noise
 float Terrain::get_height(int x, int y) {
-    return sin(x * 0.1f) * cos(y * 0.1f) * 5.0f + 5.0f;
+    float scale = 0.02f;
+    float amplitude = 10.0f;
+
+    float noise = glm::perlin(glm::vec2(x, y) * scale);
+    float height = noise * amplitude;
+
+    return height;
 }

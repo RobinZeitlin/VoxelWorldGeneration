@@ -21,6 +21,6 @@ public:
 
 private:
 	float voxelSize = 0.5f;
-	int width = 50;
-	int height = 50;
+	int width = 250;
+	int height = 250;
 };

@@ -39,9 +39,9 @@ void Game::process_input(GLFWwindow* window) {
 			newTerrain->indices.data(),
 			newTerrain->indices.size() * sizeof(GLuint)
 		);
-
-		renderer->mesh = newMesh;
-		renderer->mesh->renderer = renderer;
+		
+		newMesh->renderer = renderer;
+		renderer->meshes.push_back(newMesh);
 	}
 
 	renderer->get_camera()->inputs(window, deltaTime);

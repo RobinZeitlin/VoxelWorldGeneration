@@ -64,10 +64,12 @@ void Renderer::render() {
     glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    camera->Matrix(45.0f, 0.1f, 100.0f, *defaultShader, "camMatrix");
+    camera->Matrix(45.0f, 0.1f, 200.0f, *defaultShader, "camMatrix");
 
-    if(mesh != nullptr)
-        mesh->draw();
+    for (auto mesh : meshes) {
+        if(mesh != nullptr)
+            mesh->draw();
+    }
 
     glfwSwapBuffers(window);
 }
@@ -90,8 +92,11 @@ void Renderer::terminate() {
     delete defaultShader;
     delete camera;
 
-    if (mesh != nullptr)
+    for (auto mesh : meshes) {
         delete mesh;
+    }
+
+    meshes.clear();
 
     glfwTerminate();
 }
