@@ -10,10 +10,13 @@
 
 #include "MeshRenderer.h"
 #include "src/terrain/Terrain.h"
+#include "src/terrain/TerrainManager.h"
 
 Game::Game(GLFWwindow* window, Renderer* renderer) 
 	: window(window), renderer(renderer) {
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+	terrainManager = new TerrainManager(renderer, renderer->get_camera());
 }
 Game::~Game() {
 }
@@ -23,6 +26,7 @@ void Game::update() {
 	lastFrame = currentFrame;
 
 	process_input(window);
+	terrainManager->check_nearby_chunks();
 }
 
 void Game::process_input(GLFWwindow* window) {
@@ -31,7 +35,7 @@ void Game::process_input(GLFWwindow* window) {
 	}
 
 	if (glfwGetKey(window, GLFW_KEY_G) == GLFW_PRESS) {
-		Terrain* newTerrain = new Terrain();
+		Terrain* newTerrain = new Terrain(glm::vec2(0));
 		MeshRenderer* newMesh = new MeshRenderer(
 			renderer->defaultShader, 
 			newTerrain->vertices.data(),
@@ -42,6 +46,8 @@ void Game::process_input(GLFWwindow* window) {
 		
 		newMesh->renderer = renderer;
 		renderer->meshes.push_back(newMesh);
+
+		terrainManager->chunksSpawned[glm::vec2(0)] = newTerrain;
 	}
 
 	renderer->get_camera()->inputs(window, deltaTime);

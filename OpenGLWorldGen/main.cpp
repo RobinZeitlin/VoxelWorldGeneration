@@ -5,8 +5,8 @@
 
 extern Game* game = nullptr;
 
-#define BASE_SCREEN_WIDTH 500
-#define BASE_SCREEN_HEIGHT 500
+#define BASE_SCREEN_WIDTH 900
+#define BASE_SCREEN_HEIGHT 900
 
 int main()
 {

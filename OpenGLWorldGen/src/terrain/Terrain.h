@@ -9,7 +9,7 @@
 
 class Terrain {
 public:
-	Terrain();
+	Terrain(glm::vec2 spawnPos);
 	~Terrain();
 
 	void generate_terrain(int width, int height);
@@ -19,8 +19,10 @@ public:
 	std::vector<GLfloat> vertices;
 	std::vector<GLuint> indices;
 
+	glm::vec2 spawnPos;
+
 private:
 	float voxelSize = 0.5f;
-	int width = 250;
-	int height = 250;
+	int width = 50;
+	int height = 50;
 };

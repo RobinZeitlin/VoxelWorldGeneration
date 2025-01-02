@@ -2,7 +2,10 @@
 
 #include "Renderer.h"
 
+#include <glm.hpp>
+
 class Transform;
+class TerrainManager;
 
 class Game {
 public:
@@ -16,7 +19,9 @@ public:
 private:
 	GLFWwindow* window = nullptr;
 	Renderer* renderer = nullptr;
+	TerrainManager* terrainManager = nullptr;
 
 	float deltaTime = 0.0f;
 	float lastFrame = 0.0f;
+	bool spawned = false;
 };

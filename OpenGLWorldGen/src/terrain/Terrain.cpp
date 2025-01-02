@@ -4,7 +4,8 @@
 
 #include <gtc/noise.hpp>
 
-Terrain::Terrain() {
+Terrain::Terrain(glm::vec2 spawnPos) 
+: spawnPos(spawnPos) {
     generate_terrain(width, height);
 }
 
@@ -28,7 +29,8 @@ void Terrain::generate_terrain(int width, int height) {
                 static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
             );
 
-            addVoxel( { x, y }, color);
+            glm::vec2 posWithOffset = glm::vec2(x - (width / 2), y - (height / 2)) + spawnPos;
+            addVoxel(posWithOffset, color);
         }
     }
 }

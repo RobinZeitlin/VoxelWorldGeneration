@@ -150,10 +150,12 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\terrain\Terrain.cpp" />
+    <ClCompile Include="src\terrain\TerrainManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
     <ClInclude Include="src\terrain\Terrain.h" />
+    <ClInclude Include="src\terrain\TerrainManager.h" />
     <ClInclude Include="src\Transform.h" />
   </ItemGroup>
   <ItemGroup>
