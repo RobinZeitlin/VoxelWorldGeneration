@@ -26,7 +26,11 @@ void TerrainManager::check_nearby_chunks() {
 }
 
 void TerrainManager::spawn_chunk(glm::vec2 spawnPos) {
-	if (!chunksSpawned[spawnPos]) {
+	glm::vec2 gridPosition = spawnPos / glm::vec2(50);
+
+	auto spawn = [this](glm::vec2 spawnPos) {
+		if (chunksSpawned[spawnPos]) return;
+
 		Terrain* newTerrain = new Terrain(spawnPos);
 		MeshRenderer* newMesh = new MeshRenderer(
 			renderer->defaultShader,
@@ -40,6 +44,23 @@ void TerrainManager::spawn_chunk(glm::vec2 spawnPos) {
 		renderer->meshes.push_back(newMesh);
 
 		chunksSpawned[spawnPos] = newTerrain;
+	};
+
+	spawn(spawnPos);
+
+	glm::vec2 directions[] = {
+		glm::vec2(1, 0), // east
+		glm::vec2(-1, 0), // west
+		glm::vec2(0, 1), // north
+		glm::vec2(0, -1), // south
+		glm::vec2(1, 1), // northeast
+		glm::vec2(1, -1), // southeast
+		glm::vec2(-1, 1), // northwest
+		glm::vec2(-1, -1) // southwest
+	};
+
+	for (auto dirs : directions) {
+		spawn((gridPosition + dirs) * glm::vec2(50));
 	}
 }
 
@@ -48,7 +69,7 @@ Terrain* TerrainManager::get_closest_chunk() {
 	float closestChunkDistance = FLT_MAX;
 	Terrain* closestTerrain = nullptr;
 	for (const auto& [position, terrain] : chunksSpawned) {
-		auto distance = glm::distance(position, { cameraPosition.x, cameraPosition.z });
+		auto distance = glm::distance2(position, { cameraPosition.x, cameraPosition.z });
 
 		if (distance < closestChunkDistance) {
 			closestChunkDistance = distance;
