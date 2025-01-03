@@ -9,11 +9,53 @@
 
 TerrainManager::TerrainManager(Renderer* renderer, Camera* camera)
 	: camera(camera), renderer(renderer) {
+	std::vector<GLfloat> vertices = {
+		// Positions          // Colors
+		// Front face
+		-0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,  // Bottom-left
+		 0.5f, -0.5f,  0.5f,  1.0f, 0.0f, 0.0f,  // Bottom-right
+		 0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,  // Top-right
+		-0.5f,  0.5f,  0.5f,  1.0f, 0.0f, 0.0f,  // Top-left
+
+		// Back face
+		-0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,  // Bottom-left
+		 0.5f, -0.5f, -0.5f,  1.0f, 0.0f, 0.0f,  // Bottom-right
+		 0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f,  // Top-right
+		-0.5f,  0.5f, -0.5f,  1.0f, 0.0f, 0.0f   // Top-left
+	};
+
+	// Indices for drawing the cube (two triangles per face)
+	std::vector<GLuint> indices = {
+		// Front face
+		0, 1, 2, 2, 3, 0,
+		// Back face
+		4, 5, 6, 6, 7, 4,
+		// Left face
+		4, 0, 3, 3, 7, 4,
+		// Right face
+		1, 5, 6, 6, 2, 1,
+		// Top face
+		3, 2, 6, 6, 7, 3,
+		// Bottom face
+		4, 5, 1, 1, 0, 4
+	};
+
+	placeholderMesh = new MeshRenderer(
+		renderer->defaultShader,
+		vertices.data(),
+		vertices.size() * sizeof(GLfloat),
+		indices.data(),
+		indices.size() * sizeof(GLuint)
+	);
+	placeholderMesh->renderer = renderer;
+	renderer->meshes.push_back(placeholderMesh);
 }
 
 void TerrainManager::check_nearby_chunks() {
 	Terrain* closestChunk = get_closest_chunk();
 	if (closestChunk == nullptr) return;
+
+	std::cout << "X: " << closestChunk->spawnPos.x << " Y: " << closestChunk->spawnPos.y << std::endl;
 
 	glm::vec3 chunkPos = glm::vec3(closestChunk->spawnPos.x, 0.0f, closestChunk->spawnPos.y);
 	glm::vec3 cameraPosition = glm::vec3(camera->Position.x, 0.0f, camera->Position.z);

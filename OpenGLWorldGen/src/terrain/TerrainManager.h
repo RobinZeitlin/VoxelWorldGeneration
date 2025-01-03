@@ -7,6 +7,7 @@
 class Camera;
 class Terrain;
 class Renderer;
+class MeshRenderer;
 
 namespace std {
 	template <>
@@ -35,4 +36,6 @@ private:
 	Renderer* renderer;
 
 	float distanceToGenerate = 5;
+
+	MeshRenderer* placeholderMesh;
 };

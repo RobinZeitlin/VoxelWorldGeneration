@@ -4,6 +4,8 @@
 #include "buffers/VAO.h"
 #include "buffers/VBO.h"
 
+#include "glm.hpp"
+
 class Shader;
 class Renderer;
 
