@@ -13,7 +13,7 @@ public:
 	~Terrain();
 
 	void generate_terrain(int width, int height);
-	void addVoxel(glm::vec2 rawPos, glm::vec3 color);
+	void addVoxel(glm::vec2 rawPos);
 	float get_height(int x, int y);
 
 	std::vector<GLfloat> vertices;

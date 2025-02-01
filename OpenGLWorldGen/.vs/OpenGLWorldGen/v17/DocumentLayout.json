@@ -1,0 +1,339 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\rendering\\Texture.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\Renderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\Terrain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:src\\terrain\\Terrain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\rendering\\TextureLoader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\TerrainManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:src\\terrain\\TerrainManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\TerrainManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:src\\terrain\\TerrainManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\res\\textures\\default.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:res\\textures\\default.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\Terrain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:src\\terrain\\Terrain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\shaders\\fragment.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:src\\shaders\\fragment.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\shaders\\vertex.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:src\\shaders\\vertex.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\MeshRenderer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{5C5631AB-7B72-495F-ACEA-CA3D4A569B74}|OpenGLWorldGen.vcxproj|solutionrelative:Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\shaders\\Shader.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\MeshRenderer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\shaders\\Shader.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83E98F3A-5B63-4D8B-AEAE-77E00CD5277C}|..\\Renderer\\Renderer.vcxproj|C:\\USERS\\ROBIN\\DOCUMENTS\\GITHUB\\VOXELWORLDGENERATION\\RENDERER\\SRC\\RENDERER.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 208,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\Game.cpp",
+              "RelativeDocumentMoniker": "Game.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\Game.cpp",
+              "RelativeToolTip": "Game.cpp",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T22:12:42.741Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Terrain.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\Terrain.cpp",
+              "RelativeDocumentMoniker": "src\\terrain\\Terrain.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\Terrain.cpp",
+              "RelativeToolTip": "src\\terrain\\Terrain.cpp",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-25T22:19:58.386Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Renderer.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\Renderer.cpp",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\Renderer.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\Renderer.cpp",
+              "RelativeToolTip": "..\\Renderer\\src\\Renderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-30T21:39:31.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "vertex.shader",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\shaders\\vertex.shader",
+              "RelativeDocumentMoniker": "src\\shaders\\vertex.shader",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\shaders\\vertex.shader",
+              "RelativeToolTip": "src\\shaders\\vertex.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2025-01-03T10:11:35.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "fragment.shader",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\shaders\\fragment.shader",
+              "RelativeDocumentMoniker": "src\\shaders\\fragment.shader",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\shaders\\fragment.shader",
+              "RelativeToolTip": "src\\shaders\\fragment.shader",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002777|",
+              "WhenOpened": "2025-01-03T10:11:34.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Shader.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\shaders\\Shader.h",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\shaders\\Shader.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\shaders\\Shader.h",
+              "RelativeToolTip": "..\\Renderer\\src\\shaders\\Shader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-03T10:11:01.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Shader.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\shaders\\Shader.cpp",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\shaders\\Shader.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\shaders\\Shader.cpp",
+              "RelativeToolTip": "..\\Renderer\\src\\shaders\\Shader.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-03T10:10:55.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MeshRenderer.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\MeshRenderer.cpp",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\MeshRenderer.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\MeshRenderer.cpp",
+              "RelativeToolTip": "..\\Renderer\\src\\MeshRenderer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-03T10:05:30.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TerrainManager.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\TerrainManager.cpp",
+              "RelativeDocumentMoniker": "src\\terrain\\TerrainManager.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\TerrainManager.cpp",
+              "RelativeToolTip": "src\\terrain\\TerrainManager.cpp",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwCsAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-02T14:59:11.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\camera\\Camera.cpp",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\camera\\Camera.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\camera\\Camera.cpp",
+              "RelativeToolTip": "..\\Renderer\\src\\camera\\Camera.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-29T15:37:38.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAnwCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-28T19:45:19.816Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 192,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Texture.cpp",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\rendering\\Texture.cpp",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\rendering\\Texture.cpp",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\rendering\\Texture.cpp",
+              "RelativeToolTip": "..\\Renderer\\src\\rendering\\Texture.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-01T22:00:54.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TextureLoader.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\rendering\\TextureLoader.h",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\rendering\\TextureLoader.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\rendering\\TextureLoader.h",
+              "RelativeToolTip": "..\\Renderer\\src\\rendering\\TextureLoader.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-01T11:16:53.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "default.png",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\res\\textures\\default.png",
+              "RelativeDocumentMoniker": "res\\textures\\default.png",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\res\\textures\\default.png",
+              "RelativeToolTip": "res\\textures\\default.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-02-01T11:17:14.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TerrainManager.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\TerrainManager.h",
+              "RelativeDocumentMoniker": "src\\terrain\\TerrainManager.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\TerrainManager.h",
+              "RelativeToolTip": "src\\terrain\\TerrainManager.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-02T14:59:16.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Terrain.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\Terrain.h",
+              "RelativeDocumentMoniker": "src\\terrain\\Terrain.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\src\\terrain\\Terrain.h",
+              "RelativeToolTip": "src\\terrain\\Terrain.h",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwAkAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T22:30:00.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MeshRenderer.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\MeshRenderer.h",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\MeshRenderer.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\MeshRenderer.h",
+              "RelativeToolTip": "..\\Renderer\\src\\MeshRenderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-28T17:57:43.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Renderer.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\Renderer.h",
+              "RelativeDocumentMoniker": "..\\Renderer\\src\\Renderer.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\Renderer\\src\\Renderer.h",
+              "RelativeToolTip": "..\\Renderer\\src\\Renderer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-02T13:53:49.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Game.h",
+              "DocumentMoniker": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\Game.h",
+              "RelativeDocumentMoniker": "Game.h",
+              "ToolTip": "C:\\Users\\robin\\Documents\\GitHub\\VoxelWorldGeneration\\OpenGLWorldGen\\Game.h",
+              "RelativeToolTip": "Game.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-12-25T22:12:43.241Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

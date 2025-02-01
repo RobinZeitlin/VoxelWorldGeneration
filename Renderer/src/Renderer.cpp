@@ -27,7 +27,9 @@ GLuint indices[] = {
 
 Renderer::Renderer(int width, int height) 
     : width(width), height(height) 
-{  }
+{
+    textureManager = new TextureLoader();
+}
 
 void Renderer::init_renderer() {
     if (!glfwInit()) {
@@ -61,7 +63,8 @@ void Renderer::init_renderer() {
 }
 
 void Renderer::render() {
-    glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+    glClearColor(0.69f, 0.87f, 1.0f, 1.0f);
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     camera->Matrix(60.0f, 0.1f, 200.0f, *defaultShader, "camMatrix");

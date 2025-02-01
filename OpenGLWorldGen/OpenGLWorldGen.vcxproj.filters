@@ -46,4 +46,12 @@
     <None Include="src\shaders\vertex.shader" />
     <None Include="src\shaders\fragment.shader" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\textures\default.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\dirt.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

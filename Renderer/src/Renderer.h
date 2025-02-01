@@ -16,6 +16,7 @@
 
 #include "MeshRenderer.h"
 #include "DrawType.h"
+#include "rendering/TextureLoader.h"
 
 class Shader;
 class Camera;
@@ -29,6 +30,8 @@ public:
     void init_renderer();
     void terminate();
     void input();
+
+    TextureLoader* textureManager;
 
     std::vector<MeshRenderer*> meshes;
 

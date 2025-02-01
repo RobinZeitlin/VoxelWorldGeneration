@@ -43,6 +43,8 @@ void Game::process_input(GLFWwindow* window) {
 			newTerrain->indices.data(),
 			newTerrain->indices.size() * sizeof(GLuint)
 		);
+
+		newMesh->apply_texture(renderer->textureManager->get_texture("yigit.png"));
 		
 		newMesh->renderer = renderer;
 		renderer->meshes.push_back(newMesh);

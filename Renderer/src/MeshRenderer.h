@@ -4,6 +4,8 @@
 #include "buffers/VAO.h"
 #include "buffers/VBO.h"
 
+#include "rendering/Texture.h"
+
 #include "glm.hpp"
 
 class Shader;
@@ -15,6 +17,7 @@ public:
 	~MeshRenderer();
 
 	void draw();
+	void apply_texture(Texture* newTexture);
 	void destroy();
 
 	Renderer* renderer;
@@ -25,6 +28,7 @@ protected:
 	VBO* vbo = nullptr;
 
 	Shader* shader;
+	Texture* texture;
 
 	GLfloat* vertices;
 	GLuint* indices;

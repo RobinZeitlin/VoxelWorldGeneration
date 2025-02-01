@@ -48,10 +48,11 @@ TerrainManager::TerrainManager(Renderer* renderer, Camera* camera)
 		indices.size() * sizeof(GLuint)
 	);
 	placeholderMesh->renderer = renderer;
-	renderer->meshes.push_back(placeholderMesh);
+	//renderer->meshes.push_back(placeholderMesh);
 }
 
 void TerrainManager::check_nearby_chunks() {
+	return;
 	Terrain* closestChunk = get_closest_chunk();
 	if (closestChunk == nullptr) return;
 

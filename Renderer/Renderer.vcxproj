@@ -27,6 +27,8 @@
     <ClCompile Include="src\camera\Camera.cpp" />
     <ClCompile Include="src\MeshRenderer.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
+    <ClCompile Include="src\rendering\Texture.cpp" />
+    <ClCompile Include="src\rendering\TextureLoader.cpp" />
     <ClCompile Include="src\shaders\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +40,8 @@
     <ClInclude Include="src\DrawType.h" />
     <ClInclude Include="src\MeshRenderer.h" />
     <ClInclude Include="src\Renderer.h" />
+    <ClInclude Include="src\rendering\Texture.h" />
+    <ClInclude Include="src\rendering\TextureLoader.h" />
     <ClInclude Include="src\shaders\Shader.h" />
   </ItemGroup>
   <ItemGroup>

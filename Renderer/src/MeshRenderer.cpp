@@ -4,39 +4,55 @@
 #include "Renderer.h"
 
 MeshRenderer::MeshRenderer(Shader* shader, GLfloat* vertices, size_t verticesSize, GLuint* indices, size_t indicesSize)
-	: shader(shader), vertices(vertices), indices(indices), verticesSize(verticesSize), indicesSize(indicesSize) {
-	vao = new VAO();
-	vao->Bind();
+    : shader(shader), vertices(vertices), indices(indices), verticesSize(verticesSize), indicesSize(indicesSize), texture(nullptr) {
 
-	vbo = new VBO(vertices, verticesSize);
-	ebo = new EBO(indices, indicesSize);
+    vao = new VAO();
+    vao->Bind();
 
-	vao->LinkAttrib(*vbo, 0, 3, GL_FLOAT, 6 * sizeof(float), (void*)0);
-	vao->LinkAttrib(*vbo, 1, 3, GL_FLOAT, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    vbo = new VBO(vertices, verticesSize);
+    ebo = new EBO(indices, indicesSize);
 
-	vao->Unbind();
-	ebo->Unbind();
-	vbo->Unbind();
+    // position attribute
+    vao->LinkAttrib(*vbo, 0, 3, GL_FLOAT, 8 * sizeof(float), (void*)0);
+    // texture coordinate attribute
+    vao->LinkAttrib(*vbo, 1, 2, GL_FLOAT, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+    // normal attribute
+    vao->LinkAttrib(*vbo, 2, 3, GL_FLOAT, 8 * sizeof(float), (void*)(5 * sizeof(float)));
+
+    vao->Unbind();
+    ebo->Unbind();
+    vbo->Unbind();
 }
 
 MeshRenderer::~MeshRenderer() {
-	destroy();
+    destroy();
 }
 
 void MeshRenderer::draw() {
-	shader->Activate();
+    shader->Activate();
 
-	vao->Bind();
-	ebo->Bind();
+    if (texture) {
+        glBindTexture(GL_TEXTURE_2D, texture->textureObject);
+    }
 
-	glDrawElements(renderer->currentDrawMode, indicesSize / sizeof(GLuint), GL_UNSIGNED_INT, 0);
+    vao->Bind();
+    ebo->Bind();
+
+    glDrawElements(renderer->currentDrawMode, indicesSize / sizeof(GLuint), GL_UNSIGNED_INT, 0);
+
+    glBindVertexArray(0);
+    glBindTexture(GL_TEXTURE_2D, 0);
+}
+
+void MeshRenderer::apply_texture(Texture* newTexture) {
+    texture = newTexture;
 }
 
 void MeshRenderer::destroy() {
-	delete[] vertices;
-	delete[] indices;
+    delete[] vertices;
+    delete[] indices;
 
-	vao->Delete();
-	vbo->Delete();
-	ebo->Delete();
+    vao->Delete();
+    vbo->Delete();
+    ebo->Delete();
 }

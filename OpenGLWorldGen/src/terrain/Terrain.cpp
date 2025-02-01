@@ -1,17 +1,19 @@
 #include "Terrain.h"
 #include <cstdlib>
 #include <ctime>
-
 #include <gtc/noise.hpp>
+#include <iostream>
 
-Terrain::Terrain(glm::vec2 spawnPos) 
-: spawnPos(spawnPos) {
+Terrain::Terrain(glm::vec2 spawnPos)
+    : spawnPos(spawnPos) {
     generate_terrain(width, height);
 }
 
 Terrain::~Terrain() {}
 
 void Terrain::generate_terrain(int width, int height) {
+    std::cout << "Generating terrain" << std::endl;
+
     vertices.clear();
     indices.clear();
 
@@ -22,70 +24,90 @@ void Terrain::generate_terrain(int width, int height) {
 
     for (int x = 0; x < width; x++) {
         for (int y = 0; y < height; y++) {
-            // generate a random color
-            glm::vec3 color(
-                static_cast<float>(rand()) / static_cast<float>(RAND_MAX),
-                static_cast<float>(rand()) / static_cast<float>(RAND_MAX),
-                static_cast<float>(rand()) / static_cast<float>(RAND_MAX)
-            );
-
             glm::vec2 posWithOffset = glm::vec2(x - (width / 2), y - (height / 2)) + spawnPos;
-            addVoxel(posWithOffset, color);
+            addVoxel(posWithOffset);
         }
     }
+
+    std::cout << "Terrain generated" << std::endl;
 }
 
-void Terrain::addVoxel(glm::vec2 rawPos, glm::vec3 color) {
-
-    GLfloat halfVoxelSize = voxelSize * 0.5f; // Calculate half voxel size
-    // get the height of the location
+void Terrain::addVoxel(glm::vec2 rawPos) {
+    GLfloat halfVoxelSize = voxelSize * 0.5f;
     float terrainHeight = glm::round(get_height(rawPos.x, rawPos.y));
 
     glm::vec3 basePosition(
-        rawPos.x * voxelSize, 
-        terrainHeight * voxelSize, 
+        rawPos.x * voxelSize,
+        terrainHeight * voxelSize,
         rawPos.y * voxelSize);
 
-    // for now il use this to add a slight shade
-    glm::vec3 bottomColor = color - glm::vec3(0.2f);
-    // cube vertex points with voxelsize taken into account
-    GLfloat cubeVertices[] = {
-        basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-left-front
-        basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-right-front
-        basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, color.r, color.g, color.b,  // Top-right-front
-        basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, color.r, color.g, color.b,  // Top-left-front
-        basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-left-back
-        basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, bottomColor.r, bottomColor.g, bottomColor.b,  // Bottom-right-back
-        basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, color.r, color.g, color.b,  // Top-right-back
-        basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, color.r, color.g, color.b   // Top-left-back
-    };
-    vertices.insert(vertices.end(), std::begin(cubeVertices), std::end(cubeVertices));
+    std::vector<GLfloat> cubeVertices;
 
-    // faces of the cube
-    std::vector<GLuint> cubeIndices = {
-        // top face
-        2, 3, 7, 7, 6, 2,
-    };
+    auto lambda = [this, &terrainHeight](glm::vec2 neighbourPosition) {
+        return glm::round(get_height(neighbourPosition.x, neighbourPosition.y)) < terrainHeight;
+        };
 
-    auto lambda = [this, &cubeIndices, &terrainHeight](glm::vec2 neighbourPosition, std::vector<GLuint> additionalIndices) {
-        if (glm::round(get_height(neighbourPosition.x, neighbourPosition.y)) < terrainHeight) {
-            cubeIndices.insert(cubeIndices.end(), additionalIndices.begin(), additionalIndices.end());
-        }
-    };
+    cubeVertices.insert(cubeVertices.end(), {
+        basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 0.0f,  0.0f,  1.0f,  0.0f, // Bottom-left
+        basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 1.0f, 0.0f,  0.0f,  1.0f,  0.0f, // Bottom-right
+        basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 1.0f,  0.0f,  1.0f,  0.0f, // Top-right
+        basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, 0.0f, 1.0f,  0.0f,  1.0f,  0.0f  // Top-left
+        });
 
-    lambda({ rawPos.x + 1, rawPos.y }, { 1, 2, 6, 6, 5, 1 }); // right
-    lambda({ rawPos.x - 1, rawPos.y }, { 0, 3, 7, 7, 4, 0 }); // left
-    lambda({ rawPos.x, rawPos.y - 1 }, { 0, 1, 2, 2, 3, 0 }); // forward
-    lambda({ rawPos.x, rawPos.y + 1 }, { 4, 5, 6, 6, 7, 4 }); // back
-
-    // add indices for the cube, adding an offset based on the current number of vertices
-    GLuint offset = vertices.size() / 6 - 8;
-    for (GLuint i = 0; i < cubeIndices.size(); ++i) {
-        indices.push_back(cubeIndices[i] + offset);
+    // front face z-
+    if (lambda(glm::vec2(rawPos.x, rawPos.y - 1))) {
+        cubeVertices.insert(cubeVertices.end(), {
+            basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 0.0f,  0.0f,  0.0f, -1.0f,
+            basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, 1.0f, 0.0f,  0.0f,  0.0f, -1.0f,
+            basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 1.0f, 1.0f,  0.0f,  0.0f, -1.0f,
+            basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 1.0f,  0.0f,  0.0f, -1.0f
+            });
     }
+
+    // back face z+
+    if (lambda(glm::vec2(rawPos.x, rawPos.y + 1))) {
+        cubeVertices.insert(cubeVertices.end(), {
+            basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, 0.0f, 0.0f,  0.0f,  0.0f,  1.0f,
+            basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 0.0f,  0.0f,  0.0f,  1.0f,
+            basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 1.0f,  0.0f,  0.0f,  1.0f,
+            basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, 0.0f, 1.0f,  0.0f,  0.0f,  1.0f
+            });
+    }
+
+    // right face x+
+    if (lambda(glm::vec2(rawPos.x + 1, rawPos.y))) {
+        cubeVertices.insert(cubeVertices.end(), {
+            basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 0.0f,  1.0f,  0.0f,  0.0f,
+            basePosition.x + halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 0.0f,  1.0f,  0.0f,  0.0f,
+            basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 1.0f,  1.0f,  0.0f,  0.0f,
+            basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 1.0f,  1.0f,  0.0f,  0.0f
+            });
+    }
+
+    // left face x-
+    if (lambda(glm::vec2(rawPos.x - 1, rawPos.y))) {
+        cubeVertices.insert(cubeVertices.end(), {
+            basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 0.0f, -1.0f,  0.0f,  0.0f,
+            basePosition.x - halfVoxelSize, basePosition.y - halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 0.0f, -1.0f,  0.0f,  0.0f,
+            basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z + halfVoxelSize, 1.0f, 1.0f, -1.0f,  0.0f,  0.0f,
+            basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 1.0f, -1.0f,  0.0f,  0.0f
+            });
+    }
+
+    vertices.insert(vertices.end(), cubeVertices.begin(), cubeVertices.end());
+
+    std::vector<GLuint> faceIndices = { 0, 1, 2, 2, 3, 0 };
+
+    GLuint offset = (vertices.size() / 8) - 24;
+    for (int i = 0; i < 6; i++) {
+        std::vector<GLuint> face = faceIndices;
+        for (auto& index : face) index += offset + (i * 4);
+        indices.insert(indices.end(), face.begin(), face.end());
+    }
+
+    std::cout << "Cube Generated" << std::endl;
 }
 
-// perlin noise
 float Terrain::get_height(int x, int y) {
     float scale = 0.02f;
     float amplitude = 10.0f;
