@@ -22,7 +22,12 @@ public:
 
 	Renderer* renderer;
 
+	glm::vec3 position;
+	void setPosition(glm::vec3 newPosition);
+
 protected:
+	void updateModelMatrix();
+
 	EBO* ebo = nullptr;
 	VAO* vao = nullptr;
 	VBO* vbo = nullptr;
@@ -35,4 +40,6 @@ protected:
 
 	size_t verticesSize;
 	size_t indicesSize;
+
+	glm::mat4 modelMatrix;
 };

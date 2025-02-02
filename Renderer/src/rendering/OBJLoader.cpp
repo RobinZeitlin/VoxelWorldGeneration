@@ -145,7 +145,5 @@ MeshRenderer* OBJLoader::load_mesh(const std::string objName, Shader* shader) {
 
     files[objName] = newMeshRenderer;
 
-    std::cout << "Finished Loading " << objName << " with " << vertexData.size() << " vertices." << std::endl;
-
     return newMeshRenderer;
 }

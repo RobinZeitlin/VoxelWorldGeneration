@@ -59,7 +59,7 @@ void Renderer::init_renderer() {
 
     defaultShader = new Shader("vertex.shader", "fragment.shader");
     
-    camera = new Camera(500, 500, glm::vec3(1.0f, 0.0f, 2.0f));
+    camera = new Camera(500, 500, glm::vec3(0.0f, 0.0f, 0.0f));
 }
 
 void Renderer::render() {
