@@ -53,5 +53,11 @@
     <Image Include="res\textures\dirt.jpg">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="res\textures\grass.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\textures\stone.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

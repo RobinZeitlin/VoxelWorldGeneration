@@ -17,6 +17,7 @@
 #include "MeshRenderer.h"
 #include "DrawType.h"
 #include "rendering/TextureLoader.h"
+#include "rendering/OBJLoader.h"
 
 class Shader;
 class Camera;

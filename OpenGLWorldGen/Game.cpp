@@ -17,6 +17,7 @@ Game::Game(GLFWwindow* window, Renderer* renderer)
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	terrainManager = new TerrainManager(renderer, renderer->get_camera());
+	objLoader = new OBJLoader();
 }
 Game::~Game() {
 }
@@ -44,12 +45,25 @@ void Game::process_input(GLFWwindow* window) {
 			newTerrain->indices.size() * sizeof(GLuint)
 		);
 
-		newMesh->apply_texture(renderer->textureManager->get_texture("yigit.png"));
+		newMesh->apply_texture(renderer->textureManager->get_texture("grass.png"));
 		
 		newMesh->renderer = renderer;
 		renderer->meshes.push_back(newMesh);
 
 		terrainManager->chunksSpawned[glm::vec2(0)] = newTerrain;
+	}
+
+	if (glfwGetKey(window, GLFW_KEY_H) == GLFW_PRESS) {
+		MeshRenderer* cubeMesh = objLoader->load_mesh("tree", renderer->defaultShader);
+
+		if (cubeMesh) {
+			cubeMesh->apply_texture(renderer->textureManager->get_texture("tree.png"));
+			cubeMesh->renderer = renderer;
+			renderer->meshes.push_back(cubeMesh);
+		}
+		else {
+			std::cerr << "Failed to load cube.obj!" << std::endl;
+		}
 	}
 
 	renderer->get_camera()->inputs(window, deltaTime);

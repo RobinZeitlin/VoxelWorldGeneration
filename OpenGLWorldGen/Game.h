@@ -20,7 +20,9 @@ public:
 private:
 	GLFWwindow* window = nullptr;
 	Renderer* renderer = nullptr;
+
 	TerrainManager* terrainManager = nullptr;
+	OBJLoader* objLoader = nullptr;
 
 	float deltaTime = 0.0f;
 	float lastFrame = 0.0f;
