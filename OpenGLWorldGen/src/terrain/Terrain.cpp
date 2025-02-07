@@ -1,4 +1,5 @@
 #include "Terrain.h"
+
 #include <cstdlib>
 #include <ctime>
 #include <gtc/noise.hpp>
@@ -50,6 +51,7 @@ void Terrain::addVoxel(glm::vec2 rawPos) {
         return get_height(neighbourPosition.x, neighbourPosition.y) < terrainHeight;
         };
 
+    // always apply top face y+
     cubeVertices.insert(cubeVertices.end(), {
         basePosition.x - halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 0.0f, 0.0f,  0.0f,  1.0f,  0.0f, // Bottom-left
         basePosition.x + halfVoxelSize, basePosition.y + halfVoxelSize, basePosition.z - halfVoxelSize, 1.0f, 0.0f,  0.0f,  1.0f,  0.0f, // Bottom-right
@@ -141,14 +143,10 @@ void Terrain::spawn_tree(glm::vec2 spawnPosTree) {
             cubeMesh->renderer = renderer;
             renderer->meshes.push_back(cubeMesh);
 
-            float yHeight = get_height(spawnPosTree.x, spawnPosTree.y);  // Remove the offset inconsistency
+            float yHeight = get_height(spawnPosTree.x, spawnPosTree.y);
             cubeMesh->setPosition(glm::vec3(spawnPos.x + spawnPosTree.x, yHeight * voxelSize, spawnPos.y + spawnPosTree.y));
 
-
             spawnedTrees.push_back(glm::vec3(spawnPos.x + spawnPosTree.x, yHeight, spawnPos.y + spawnPosTree.y));
-        }
-        else {
-            std::cerr << "Failed to load tree mesh!" << std::endl;
         }
     }
 }
