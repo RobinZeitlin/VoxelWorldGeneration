@@ -82,14 +82,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Renderer\src;$(ProjectDir)..\Renderer\dependencies\glad\include;$(ProjectDir)..\Renderer\dependencies\glfw\include;$(ProjectDir)..\Renderer\dependencies\glm;$(ProjectDir)..\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Renderer\src;$(ProjectDir)..\Renderer\dependencies\glad\include;$(ProjectDir)..\Renderer\dependencies\glfw\include;$(ProjectDir)..\Renderer\dependencies\glm;$(ProjectDir)..\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories);C:\Users\robin.zeitlin-talamo\Desktop\bullet3-master\src</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)..\Renderer\dependencies\glad\lib;$(ProjectDir)..\Renderer\dependencies\glfw\lib;$(ProjectDir)..\Renderer\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;Renderer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)..\Renderer\dependencies\glad\lib;$(ProjectDir)..\Renderer\dependencies\glfw\lib;$(ProjectDir)..\Renderer\x64\Debug;%(AdditionalLibraryDirectories);C:\Projects\VoxelWorldGeneration\OpenGLWorldGen\dependencies\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;Renderer.lib;BulletCollision_Debug.lib;BulletDynamics_Debug.lib;LinearMath_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,14 +118,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\Renderer\src;$(ProjectDir)\Renderer\dependencies\glad\include;$(ProjectDir)\Renderer\dependencies\glfw\include;$(ProjectDir)\Renderer\dependencies\glm;$(ProjectDir)\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\Renderer\src;$(ProjectDir)\Renderer\dependencies\glad\include;$(ProjectDir)\Renderer\dependencies\glfw\include;$(ProjectDir)\Renderer\dependencies\glm;$(ProjectDir)\Renderer\dependencies\stb_image;%(AdditionalIncludeDirectories);C:\Users\robin.zeitlin-talamo\Desktop\bullet3-master\build3\cmake\CMakeFiles\src;C:\Users\robin.zeitlin-talamo\Desktop\bullet3-master\src</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(ProjectDir)\Renderer\dependencies\glad\lib;$(ProjectDir)\Renderer\dependencies\glfw\lib;$(ProjectDir)\Renderer\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;Renderer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)\Renderer\dependencies\glad\lib;$(ProjectDir)\Renderer\dependencies\glfw\lib;$(ProjectDir)\Renderer\x64\Debug;%(AdditionalLibraryDirectories);C:\Projects\VoxelWorldGeneration\OpenGLWorldGen\dependencies\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;Renderer.lib;BulletCollision_Debug.lib;BulletDynamics_Debug.lib;LinearMath_Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -167,6 +169,11 @@
     <Image Include="res\textures\dirt.jpg" />
     <Image Include="res\textures\grass.png" />
     <Image Include="res\textures\stone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="dependencies\lib\BulletCollision_Debug.lib" />
+    <Library Include="dependencies\lib\BulletDynamics_Debug.lib" />
+    <Library Include="dependencies\lib\LinearMath_Debug.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

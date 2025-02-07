@@ -3,6 +3,8 @@
 #include "Game.h"
 #include "Renderer.h"
 
+#include "btBulletDynamicsCommon.h"
+
 extern Game* game = nullptr;
 
 #define BASE_SCREEN_WIDTH 900
@@ -20,6 +22,7 @@ int main()
 		renderer->get_window(), 
 		renderer);
 
+	btDefaultCollisionConfiguration collisionConfiguration;
 
 	while (!glfwWindowShouldClose(renderer->get_window())) {
 		renderer->render();

@@ -60,4 +60,9 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Library Include="dependencies\lib\BulletCollision_Debug.lib" />
+    <Library Include="dependencies\lib\BulletDynamics_Debug.lib" />
+    <Library Include="dependencies\lib\LinearMath_Debug.lib" />
+  </ItemGroup>
 </Project>

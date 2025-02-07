@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Projects\OpenGLWorldGen\x64\Debug\OpenGLWorldGen.exe</FullPath>
+      <FullPath>C:\Projects\VoxelWorldGeneration\OpenGLWorldGen\x64\Debug\OpenGLWorldGen.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
